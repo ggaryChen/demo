@@ -1,11 +1,11 @@
-import './App.css';
-import * as React from 'react';
-import Blog from './blog';
+import "./App.css";
+import * as React from "react";
+import Blog from "./blog";
 
 function App() {
   return (
     <div className="App">
-      <Blog/>
+      <Blog />
     </div>
   );
 }

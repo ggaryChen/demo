@@ -76,8 +76,7 @@ export function Search() {
 export default function MainContent() {
   const [focusedCardIndex, setFocusedCardIndex] = React.useState(null);
   const [cardState, setCardState] = React.useState(cardData);
-  const filterArray = cardData.map((card) => card.tag);
-  console.log(filterArray);
+  const filterArray = new Set(cardData.map((card) => card.tag));
 
   const navigate = useNavigate();
 

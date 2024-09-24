@@ -10,27 +10,30 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "./index.css";
 
-const router = createBrowserRouter([
-  {
-    path: "/article",
-    element: <Article />,
-    children: [
-      {
-        path: "/article/:id",
-        element: <Article />,
-      },
-    ],
-  },
-  {
-    path: "/",
-    element: <App />,
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: "/article",
+      element: <Article />,
+      children: [
+        {
+          path: "/article/:id",
+          element: <Article />,
+        },
+      ],
+    },
+    {
+      path: "/",
+      element: <App />,
+    },
+  ],
+  { basename: "/demo" }
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} basename="/demo" />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

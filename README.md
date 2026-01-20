@@ -1,70 +1,253 @@
-# Getting Started with Create React App
+# 设置缓存
+```
+window.localStorage.setItem('interview_sum_cache_276948547', `{"data":{"interview_summary":"候选人具备5年前端开发经验，对React技术栈及中后台业务有实践经验。技术基础尚可但深度不足，对核心概念（如闭包、Hooks原理、性能指标）的理解停留在表面。工程化思维和系统性设计能力较弱，沟通中缺乏自信，对不确定问题常以猜测回应。建议深入理解JavaScript和React底层原理，并加强大型项目架构设计能力。","highlights":[{"point":"具备5年React中后台开发经验，对权限系统、配置平台、复杂表单等业务场景熟悉。","timestamp":"00:00:20"},{"point":"有实际性能优化经验，能提到虚拟列表、React.memo、useCallback等具体优化手段。","timestamp":"00:10:30"},{"point":"参与过项目重构，有从Class组件到Hooks的迁移经验，并提到分批改、多测试的风险控制方法。","timestamp":"00:19:40"},{"point":"能意识到自身短板（底层原理理解不足）并主动学习提升，态度诚恳。","timestamp":"00:23:50"},{"point":"对通用表单组件的设计能考虑到配置化、校验和样式统一等基本要素。","timestamp":"00:22:15"}],"lowlights":[{"issue":"对闭包的理解不准确且不完整，仅停留在“函数嵌套”和“访问外部变量”层面，未能说明其核心是“函数与其词法环境的引用关系”及典型应用场景（如模块化、数据私有化）。","timestamp":"00:02:20","suggestion":"建议深入理解闭包的定义、内存模型及其在模块模式、高阶函数、函数式编程中的实际应用，避免仅停留在语法描述。"},{"issue":"对React Hooks原理理解薄弱，不清楚useEffect cleanup在依赖变化时的执行时机，也不了解Hooks不能写在条件判断里的根本原因（React依赖调用顺序来管理状态）。","timestamp":"00:08:20","suggestion":"建议系统学习React Hooks的实现原理，理解Fiber架构下Hooks的链表存储机制，明确useEffect的生命周期细节。"},{"issue":"对性能优化指标（如FCP、LCP）了解不深，排查思路停留在网络请求和包大小等基础层面，缺乏对现代Web性能指标的关注和系统性分析能力。","timestamp":"00:14:10","suggestion":"建议学习Web Vitals核心指标（LCP、FID、CLS）及Chrome DevTools中的Performance、Lighthouse等工具，建立基于数据的性能分析流程。"},{"issue":"工程化思维不足，对模块拆分和依赖管理仅停留在“按业务文件夹”和“尽量避免”的层面，缺乏对设计模式、依赖解耦（如DIP）、公共模块抽象的系统性思考。","timestamp":"00:16:35","suggestion":"建议学习大型前端项目的架构设计模式（如微前端、Monorepo）、模块化设计原则，并实践如何通过接口、依赖注入等方式解耦业务模块。"},{"issue":"对Code Review的理解停留在“找bug”和“逻辑对错”的功能层面，缺乏对代码可维护性、设计模式、代码风格一致性和可测试性等更高维度的关注。","timestamp":"00:18:10","suggestion":"建议在Code Review中引入对代码结构、命名、单一职责、开闭原则等设计层面的评审，并建立团队的代码质量标准和Checklist。"}],"entities":["前端开发","React","中后台系统","权限系统","配置平台","复杂表单","数据可视化","闭包","防抖节流","useState","var","let","const","useEffect","Hooks","虚拟列表","React.memo","useCallback","FCP","LCP","eslint","prettier","code review","重构","通用表单组件","性能优化"],"timeBlocks":[{"start_time":"00:00:00","end_time":"00:02:10","segment_title":"自我介绍","summary":"面试者简要介绍了5年前端开发经验，重点阐述最近三年使用React技术栈开发中后台系统的经历，包括权限系统、配置平台、复杂表单和数据可视化。提到了对性能、可维护性的关注及参与项目重构的经历。","key_points":["5年React前端经验","中后台业务熟悉（权限、配置、表单）","关注性能与可维护性"],"performance_level":"good","mentioned_entities":["前端开发","React","中后台系统","权限系统","配置平台","复杂表单","数据可视化"]},{"start_time":"00:02:10","end_time":"00:10:00","segment_title":"JavaScript基础考察","summary":"面试官围绕闭包、var/let/const进行提问。面试者对闭包的定义理解模糊，仅描述为函数嵌套和访问外部变量，未能准确阐述其本质及工程场景。对const的不可变性理解不完整（知道对象属性可改）。回答缺乏深度和自信。","key_points":["闭包理解不准确不深入","对const的不可变性认识片面","回答犹豫，缺乏确定性"],"performance_level":"needs_improvement","mentioned_entities":["闭包","防抖节流","useState","var","let","const"]},{"start_time":"00:10:00","end_time":"00:15:00","segment_title":"React核心原理与性能","summary":"聚焦React Hooks（useEffect）和性能优化。面试者能说出useEffect基本用法，但对其执行时机（尤其是cleanup函数在依赖变化时的行为）不明确。对Hooks规则（不能写在条件里）的底层原因不清楚。在性能优化方面能列举具体手段，但对原理理解不深。","key_points":["useEffect生命周期细节掌握不足","Hooks规则原理理解薄弱","有性能优化实践经验但缺乏理论深度"],"performance_level":"neutral","mentioned_entities":["useEffect","Hooks","虚拟列表","React.memo","useCallback","FCP","LCP"]},{"start_time":"00:15:00","end_time":"00:22:00","segment_title":"工程化与项目经验","summary":"讨论了大型项目模块拆分、代码质量保证和重构经验。面试者对模块拆分的思考较为初级，依赖管理思路不清晰。Code Review关注点偏功能而非设计。有重构经验并提到了风险控制方法（分批改、多测试），但缺乏更深层次的架构思考。","key_points":["工程化思维和架构设计能力较弱","Code Review维度较窄","有重构实践经验但方法论不系统"],"performance_level":"neutral","mentioned_entities":["eslint","prettier","code review","重构"]},{"start_time":"00:22:00","end_time":"00:27:00","segment_title":"设计题与自我评估","summary":"面试官抛出通用表单组件设计问题，并询问候选人短板。面试者对表单组件的考虑点（配置化、校验、样式）较为基础，对性能、可扩展性等深层次设计思考不足。能诚实承认对底层原理理解不足，并表达了持续学习的意愿。","key_points":["组件设计思路停留在功能层面","能客观认知自身技术短板","表现出学习提升的意愿"],"performance_level":"neutral","mentioned_entities":["通用表单组件","性能优化"]}],"summary":"候选人具备5年前端开发经验，对React技术栈及中后台业务有实践经验。技术基础尚可但深度不足，对核心概念（如闭包、Hooks原理、性能指标）的理解停留在表面。工程化思维和系统性设计能力较弱，沟通中缺乏自信，对不确定问题常以猜测回应。建议深入理解JavaScript和React底层原理，并加强大型项目架构设计能力。","totalDuration":"00:27:00"},"timestamp":1768913951338}`)
+```
+# 测试文本
+```
+# 面试对话原始脚本（Mock｜用于 interviewSum）
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[00:00] 面试官：
+你好，可以先简单自我介绍一下吗？主要说一下你最近两三年的工作内容。
 
-## Available Scripts
+[00:20] 面试者：
+好的。我目前有五年左右的前端开发经验，最近三年主要在做 React 技术栈的项目，偏中后台系统，比如权限系统、配置平台，还有一些复杂表单和数据可视化页面。我平时也会关注性能和可维护性，参与过项目重构。
 
-In the project directory, you can run:
+[02:10] 面试官：
+好，那我们从 JavaScript 基础开始。你能说一下什么是闭包吗？
 
-### `npm start`
+[02:20] 面试者：
+闭包我理解就是函数里面套函数，内部函数可以访问外部函数的变量。
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[02:50] 面试官：
+只有函数嵌套就一定是闭包吗？
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[03:00] 面试者：
+呃……应该是只要内部函数用了外部变量，就算是闭包。
 
-### `npm test`
+[03:20] 面试官：
+那闭包解决了什么问题？或者说它在工程里常见的使用场景是什么？
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[03:35] 面试者：
+比如防抖节流，还有在 React 里面保存一些状态。
 
-### `npm run build`
+[04:10] 面试官：
+React 里的状态是靠闭包保存的吗？
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[04:20] 面试者：
+嗯……算是吧，比如 useState。
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[04:40] 面试官：
+好，这里我们先往后走。
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[05:00] 面试官：
+说一下 var、let、const 的区别。
 
-### `npm run eject`
+[05:10] 面试者：
+var 有变量提升，let 和 const 没有。const 是常量不能修改。
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+[05:40] 面试官：
+const 真的完全不能修改吗？
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[05:50] 面试者：
+如果是对象的话，里面的属性可以改。
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+[06:10] 面试官：
+好。
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+[06:20] 面试官：
+我们聊聊 React。你平时 useEffect 用得多吗？
 
-## Learn More
+[06:30] 面试者：
+挺多的，用来请求数据、订阅事件之类的。
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[06:45] 面试官：
+那 useEffect 的执行时机你能完整说一下吗？
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[06:55] 面试者：
+组件渲染之后执行，如果依赖数组为空就只执行一次，有描述的话依赖变化就会执行。
 
-### Code Splitting
+[07:30] 面试官：
+组件首次渲染时，如果依赖数组不为空，会执行吗？
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[07:40] 面试者：
+会的。
 
-### Analyzing the Bundle Size
+[07:50] 面试官：
+那 cleanup 函数什么时候执行？
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+[08:00] 面试者：
+组件卸载的时候。
 
-### Making a Progressive Web App
+[08:10] 面试官：
+依赖变化时呢？
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+[08:20] 面试者：
+嗯……这个我有点不太确定。
 
-### Advanced Configuration
+[08:45] 面试官：
+好，没关系。
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+[09:00] 面试官：
+你知道为什么 Hooks 不能写在条件判断里吗？
 
-### Deployment
+[09:10] 面试者：
+因为会报错，React 不允许。
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+[09:25] 面试官：
+除了“会报错”，还有更底层的原因吗？
 
-### `npm run build` fails to minify
+[09:40] 面试者：
+是不是和性能有关？
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[10:00] 面试官：
+好，我们先继续。
+
+[10:20] 面试官：
+你刚刚提到做过性能优化，能举个具体的例子吗？
+
+[10:30] 面试者：
+比如列表很多的时候，我会用虚拟列表。还有用 React.memo、useCallback 来减少不必要的渲染。
+
+[11:10] 面试官：
+你在什么情况下会用 useCallback？
+
+[11:20] 面试者：
+一般是传给子组件的函数，防止子组件重新渲染。
+
+[11:50] 面试官：
+useCallback 一定能减少渲染吗？
+
+[12:00] 面试者：
+嗯……大多数情况下可以。
+
+[12:20] 面试官：
+好。
+
+[12:40] 面试官：
+如果一个页面首屏加载很慢，你一般会怎么排查？
+
+[12:55] 面试者：
+我会先看网络请求，然后看是不是包太大，再看看有没有阻塞渲染的 JS。
+
+[13:30] 面试官：
+你会关注哪些具体指标？
+
+[13:40] 面试者：
+比如加载时间、接口时间。
+
+[14:00] 面试官：
+你了解过 FCP、LCP 这些指标吗？
+
+[14:10] 面试者：
+听过，但用得不多。
+
+[14:40] 面试官：
+好。
+
+[15:00] 面试官：
+我们聊点工程化。一个大型前端项目，你会怎么做模块拆分？
+
+[15:15] 面试者：
+我一般按业务拆分，每个业务一个文件夹。
+
+[15:40] 面试官：
+公共组件和业务组件怎么区分？
+
+[15:50] 面试者：
+公共的就放在 components 下面。
+
+[16:20] 面试官：
+如果两个业务互相依赖了，怎么处理？
+
+[16:35] 面试者：
+这个……尽量避免吧。
+
+[17:00] 面试官：
+好。
+
+[17:20] 面试官：
+你平时怎么保证代码质量？
+
+[17:30] 面试者：
+会用 eslint、prettier，还有 code review。
+
+[18:00] 面试官：
+你觉得 code review 主要看什么？
+
+[18:10] 面试者：
+看逻辑对不对，还有有没有 bug。
+
+[18:40] 面试官：
+有没有关注过可维护性或者设计层面的东西？
+
+[18:55] 面试者：
+有一点，但主要还是功能优先。
+
+[19:30] 面试官：
+你有没有参与过系统重构？
+
+[19:40] 面试者：
+有，把一个老项目从 class 组件改成 hooks。
+
+[20:10] 面试官：
+重构过程中遇到的最大问题是什么？
+
+[20:20] 面试者：
+主要是改动比较大，容易出问题。
+
+[20:50] 面试官：
+你是怎么控制风险的？
+
+[21:00] 面试者：
+分批改，然后多测试。
+
+[21:30] 面试官：
+好。
+
+[22:00] 面试官：
+如果让你设计一个通用表单组件，你会考虑哪些点？
+
+[22:15] 面试者：
+配置化、校验，还有样式统一。
+
+[22:40] 面试官：
+性能方面会考虑吗？
+
+[22:50] 面试者：
+如果字段很多，可能会考虑拆分。
+
+[23:20] 面试官：
+好。
+
+[23:40] 面试官：
+最后一个问题，你觉得你现在最大的短板是什么？
+
+[23:50] 面试者：
+可能是对底层原理理解还不够深入。
+
+[24:20] 面试官：
+你有针对性地做过什么提升吗？
+
+[24:30] 面试者：
+有看一些文章和源码，但还在学习中。
+
+[25:00] 面试官：
+好，今天差不多就到这里了，你有什么想问我的吗？
+
+[25:10] 面试者：
+想问一下团队对这个岗位的技术期望。
+
+[25:40] 面试官：
+我们更希望这个岗位能承担一定的技术设计职责。
+
+[26:10] 面试者：
+好的，了解。
+
+[26:30] 面试官：
+那今天就先这样，后续会有 HR 联系你。
+
+[26:40] 面试者：
+好的，谢谢。
+
+[27:00] 面试结束
+```

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './InterviewSum.css';
 import TextInput from './components/TextInput';
 import ProgressBar from './components/ProgressBar';
@@ -11,16 +11,27 @@ function InterviewSum() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [progress, setProgress] = useState(0);
+  
+  // 防抖用的 ref，确保请求只能发送一次
+  const isProcessingRef = useRef(false);
 
   const handleProcess = async () => {
+    // 防抖检查：如果已经在处理中，直接返回
+    if (isProcessingRef.current || loading) {
+      return;
+    }
+
     if (!scriptText.trim()) {
       setError('请输入面试脚本内容');
       return;
     }
 
+    // 标记正在处理，防止重复点击
+    isProcessingRef.current = true;
     setLoading(true);
     setError(null);
     setProgress(0);
+    setTimelineData(null); // 清空旧结果，确保新请求时没有缓存影响
 
     try {
       // 模拟 AI 处理过程
@@ -29,9 +40,14 @@ function InterviewSum() {
       setProgress(100);
     } catch (err) {
       setError(err.message || '处理失败，请重试');
+      setTimelineData(null); // 错误时也要清空结果，不显示旧数据
       setProgress(0);
     } finally {
       setLoading(false);
+      // 处理完成后，延迟 500ms 再允许下一次点击（防止快速重复点击）
+      setTimeout(() => {
+        isProcessingRef.current = false;
+      }, 500);
     }
   };
 
